@@ -12,12 +12,10 @@ public class ReviewRepositoryTest {
 	ReviewRepository underTest;
 
 	private Long firstReviewId = 1L;
-	private Review firstReview = new Review(firstReviewId, "title", "image url", "category", "content",
-			"review synopsis");
+	private Review firstReview = new Review(firstReviewId, "title", "url", "category", "content");
 
 	private Long secondReviewId = 2L;
-	private Review secondReview = new Review(secondReviewId, "title", "image url", "category", "content",
-			"review synopsis");
+	private Review secondReview = new Review(secondReviewId, "title", "url", "category", "content");
 
 	@Test
 	public void shoulFindAReview() {
@@ -37,8 +35,8 @@ public class ReviewRepositoryTest {
 	@Test
 	public void shouldFindAllReviews() {
 		underTest = new ReviewRepository(firstReview, secondReview);
-		Collection<Review> result = underTest.findAll();
-		assertThat(result, containsInAnyOrder(firstReview, secondReview));
+		Collection<Review>result = underTest.findAll();
+		assertThat(result,containsInAnyOrder(firstReview, secondReview));
 
 	}
 }
