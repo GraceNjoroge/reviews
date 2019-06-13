@@ -50,24 +50,25 @@ public class ReviewControllerMvcTest {
 
 	@Test
 	public void shouldPutAllReviewsIntoModel() throws Exception {
-		Collection<Review> allReviews = asList(firstReview,secondReview);
+		Collection<Review> allReviews = asList(firstReview, secondReview);
 		when(repository.findAll()).thenReturn(allReviews);
 		mvc.perform(get("/show-reviews")).andExpect(model().attribute("reviews", is(allReviews)));
 	}
-	@Test 
+
+	@Test
 	public void shouldBeOkForOneReview() throws Exception {
 		mvc.perform(get("/review?id=1")).andExpect(status().isOk());
 	}
-	
-	@Test 
-	public void shouldRouteToSingleCourseView () throws Exception {
+
+	@Test
+	public void shouldRouteToSingleCourseView() throws Exception {
 		mvc.perform(get("/review?id=1")).andExpect(view().name(is("review")));
 	}
-	
-	@Test 
+
+	@Test
 	public void shouldPutSingleCourseIntoModel() throws Exception {
 		when(repository.findOne(1L)).thenReturn(firstReview);
-		
+
 		mvc.perform(get("/review?id=1")).andExpect(model().attribute("reviews", is(firstReview)));
 	}
 }

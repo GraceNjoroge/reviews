@@ -35,8 +35,8 @@ public class ReviewRepositoryTest {
 	@Test
 	public void shouldFindAllReviews() {
 		underTest = new ReviewRepository(firstReview, secondReview);
-		Collection<Review>result = underTest.findAll();
-		assertThat(result,containsInAnyOrder(firstReview, secondReview));
+		Collection<Review> result = underTest.findAll();
+		assertThat(result, containsInAnyOrder(firstReview, secondReview));
 
 	}
 }

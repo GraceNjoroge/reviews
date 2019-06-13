@@ -31,10 +31,9 @@ public class Review {
 	public String getCategory() {
 		return category;
 	}
+
 	public String getContent() {
 		return content;
-	
+
 	}
 }
-
-
