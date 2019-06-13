@@ -12,10 +12,10 @@ public class ReviewRepositoryTest {
 	ReviewRepository underTest;
 
 	private Long firstReviewId = 1L;
-	private Review firstReview = new Review(firstReviewId, "title", "url", "category", "content");
+	private Review firstReview = new Review(firstReviewId, "name", "url", "category", "content");
 
 	private Long secondReviewId = 2L;
-	private Review secondReview = new Review(secondReviewId, "title", "url", "category", "content");
+	private Review secondReview = new Review(secondReviewId, "name", "url", "category", "content");
 
 	@Test
 	public void shoulFindAReview() {

@@ -3,25 +3,25 @@ package com.lovingscience.reviews;
 public class Review {
 
 	private long id;
-	private String title;
+	private String name;
 	private String url;
 	private String category;
 	private String content;
 
-	public Review(Long id, String title, String url, String location, String synopsis) {
+	public Review(Long id, String name, String url, String category, String content) {
 		this.id = id;
-		this.title = title;
+		this.name = name;
 		this.url = url;
-		this.category = location;
-		this.content = synopsis;
+		this.category = category;
+		this.content = content;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	public String getUrl() {

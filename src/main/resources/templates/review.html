@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th ="http://www.thymeleaf.org">
+
 <head>
 	<title>review</title>
+	
+	<link rel="stylesheet" 
+	type="text/css" 
+	href="review.css"/>
+
 </head>
+
 <body>
 
-<h1>A single Review</h1>
+<h1> For each Review</h1>
+
+<div th:each = "review: ${reviews}">
+	<p th:text = "${review.name}"></p>
+	<img th:src="@{'/images/' + ${review.url} + '.jpg'}" alt = "Picture"/>
+	<p th:text = "${review.category}"></p>
+	<p th:text = "${review.content}"></p>
+	<a href = "http://localhost:8080/show-reviews"> Back to home</a>
+
+</div>
 
 </body>
 </html>
